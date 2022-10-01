@@ -56,7 +56,7 @@ public class JDBCutil {
             pre.close();
         }
         if (con != null) {
-            con.close();
+            con.close(); 
 
         }
     }

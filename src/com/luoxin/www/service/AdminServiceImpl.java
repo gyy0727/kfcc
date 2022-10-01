@@ -6,18 +6,14 @@ import com.luoxin.www.dao.*;
 import com.luoxin.www.ioc.BeanFiled;
 import com.luoxin.www.ioc.IocAnnotation;
 import com.luoxin.www.po.Admin;
-import com.luoxin.www.po.Goods;
 import com.luoxin.www.po.Order;
-import com.luoxin.www.po.User;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
+
 
 @IocAnnotation
 public class AdminServiceImpl implements AdminService{
@@ -49,6 +45,7 @@ public class AdminServiceImpl implements AdminService{
             req.getRequestDispatcher(" ").forward(req, resp);
         }
     }
+
     @AopMethod
     @Override
     @RequestMapping("adminRegister")

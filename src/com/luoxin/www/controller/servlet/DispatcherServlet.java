@@ -4,8 +4,6 @@ import com.luoxin.www.aop.AopMethod;
 import com.luoxin.www.aop.ProxyImpl;
 import com.luoxin.www.ioc.BeanFiled;
 import com.luoxin.www.ioc.IocAnnotation;
-import org.testng.annotations.Test;
-
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +18,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet("/d")
+@WebServlet("/*")
 public class DispatcherServlet extends HttpServlet {
     private String filePath;
     private Map<String, Method> handlerMapping = new HashMap<String, Method>();
@@ -28,7 +26,7 @@ public class DispatcherServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        load();
+       /* load();*/
     }
 
     @Override
@@ -38,7 +36,7 @@ public class DispatcherServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String url = GetParam.getParameterList(req, resp);
+        /*String url = GetParam.getParameterList(req, resp);
         Method method = handlerMapping.get("/UserServiceImpl/userlogin");
 
         if (method == null) {
@@ -48,7 +46,6 @@ public class DispatcherServlet extends HttpServlet {
         System.out.println(method.getDeclaringClass().getSimpleName());
 
         if (method.getAnnotation(AopMethod.class) == null) {
-
             try {
                 method.invoke(method.getDeclaringClass().newInstance(), req, resp);
             } catch (IllegalAccessException e) {
@@ -58,9 +55,7 @@ public class DispatcherServlet extends HttpServlet {
             } catch (InstantiationException e) {
                 e.printStackTrace();
             }
-
         } else {
-
             try {
                 ProxyImpl.ProxyUtil(method, method.getDeclaringClass().getInterfaces(), method.getDeclaringClass().newInstance(), req, resp);
             } catch (InstantiationException e) {
@@ -73,11 +68,9 @@ public class DispatcherServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
+    }*/
 
-    }
-
-    @Test
-    public void load() {
+    /*public void load() {
         filePath = DispatcherServlet.class.getClassLoader().getResource("").getFile();
         loadOne(new File(filePath));
         assembleObject();
@@ -118,7 +111,6 @@ public class DispatcherServlet extends HttpServlet {
             }
         }
         initHandlerMapping(beanFactory);
-
     }
 
     private void assembleObject() {
@@ -168,6 +160,6 @@ public class DispatcherServlet extends HttpServlet {
                     handlerMapping.put(url, method);
                 }
             }
-        }
+        }*/
     }
 }

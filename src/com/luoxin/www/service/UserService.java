@@ -1,9 +1,5 @@
 package com.luoxin.www.service;
-
-import com.luoxin.www.po.Order;
-import com.luoxin.www.po.User;
 import com.luoxin.www.ioc.IocAnnotation;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
