@@ -26,7 +26,7 @@ public class DispatcherServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-       /* load();*/
+        load();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DispatcherServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*String url = GetParam.getParameterList(req, resp);
+        String url = GetParam.getParameterList(req, resp);
         Method method = handlerMapping.get("/UserServiceImpl/userlogin");
 
         if (method == null) {
@@ -68,9 +68,9 @@ public class DispatcherServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
-    }*/
+    }
 
-    /*public void load() {
+    public void load() {
         filePath = DispatcherServlet.class.getClassLoader().getResource("").getFile();
         loadOne(new File(filePath));
         assembleObject();
@@ -160,6 +160,6 @@ public class DispatcherServlet extends HttpServlet {
                     handlerMapping.put(url, method);
                 }
             }
-        }*/
+        }
     }
 }
